@@ -120,6 +120,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Download JAR artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: built-jar
+          path: target
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -139,11 +145,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }}
-
-      - name: Optionally tag latest on main
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-        run: |
-          docker pull ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }}
-          docker tag ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }} ghcr.io/${{ github.repository }}:latest
-          echo "Tagged image as :latest"
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }}
+            ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && format('ghcr.io/{0}:latest', github.repository) || '' }}
