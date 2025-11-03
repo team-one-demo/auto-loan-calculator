@@ -139,7 +139,17 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push multi-platform image
+      - name: Build and push multi-platform image (non-main)
+        if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master'
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }}
+
+      - name: Build and push multi-platform image (main)
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         uses: docker/build-push-action@v4
         with:
           context: .
@@ -147,4 +157,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}:${{ github.ref_name }}-${{ github.sha }}
-            ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && format('ghcr.io/{0}:latest', github.repository) || '' }}
+            ghcr.io/${{ github.repository }}:latest
