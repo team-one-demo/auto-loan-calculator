@@ -39,7 +39,7 @@ public class LoanCalculatorServiceImpl implements LoanCalculatorService {
         // Remove unused variables
 
         double principal = request.getCarPrice();
-        int termInMonths = request.getRepaymentYears() * MONTHS_IN_YEAR;
+        int termInMonths = (double) request.getRepaymentYears() * MONTHS_IN_YEAR;
         double monthlyRate = request.getInterestRate() / PERCENTAGE_CONVERSION / MONTHS_IN_YEAR;
         
         // Calculate monthly payment using the formula:
