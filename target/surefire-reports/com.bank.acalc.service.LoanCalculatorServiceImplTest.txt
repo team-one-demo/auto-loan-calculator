@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.bank.acalc.service.LoanCalculatorServiceImplTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.08 s <<< FAILURE! - in com.bank.acalc.service.LoanCalculatorServiceImplTest
-calculateLoan_withZeroInterest_shouldReturnCorrectValues  Time elapsed: 0.063 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <333.5> but was: <333.42>
-	at com.bank.acalc.service.LoanCalculatorServiceImplTest.calculateLoan_withZeroInterest_shouldReturnCorrectValues(LoanCalculatorServiceImplTest.java:43)
-
