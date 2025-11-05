@@ -40,7 +40,7 @@ class LoanCalculatorServiceImplTest {
         
         // Then
         assertNotNull(response);
-        assertEquals(333.50, response.getMonthlyPayment(), 0.01);
+        assertEquals(333.42, response.getMonthlyPayment(), 0.01);
         assertEquals(20005.08, response.getTotalPayment(), 0.01);
     }
 
