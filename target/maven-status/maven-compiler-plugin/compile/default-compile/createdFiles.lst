@@ -1,6 +1,0 @@
-com/bank/acalc/model/LoanResponse.class
-com/bank/acalc/service/LoanCalculatorService.class
-com/bank/acalc/AcalcApplication.class
-com/bank/acalc/model/LoanRequest.class
-com/bank/acalc/service/LoanCalculatorServiceImpl.class
-com/bank/acalc/controller/LoanCalculatorController.class
