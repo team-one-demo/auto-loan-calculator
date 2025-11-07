@@ -158,7 +158,7 @@ This document outlines identified code quality issues in the Auto Loan Calculato
 ## Risk Assessment
 
 | Finding | Risk if Unaddressed | Mitigation Strategy |
-|---------|-------------------|---------------------|
+|---------|---------------------|---------------------|
 | Finding 1 | HIGH - Security vulnerability | Remove immediately, no workarounds |
 | Finding 2 | MEDIUM - Potential bugs in collections | Implement with comprehensive tests |
 | Finding 3 | MEDIUM - CSRF attacks | Configure restrictive CORS policy |
@@ -193,8 +193,8 @@ This document outlines identified code quality issues in the Auto Loan Calculato
 
 ## Approval & Sign-off
 
-| Role | Name | Signature | Date |
-|------|------|-----------|------|
+| Role             | Name | Signature | Date |
+|------------------|------|-----------|------|
 | Engineering Lead | TBD | | |
 | Security Officer | TBD | | |
 | Product Owner | TBD | | |
