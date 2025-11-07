@@ -46,7 +46,7 @@ public class LoanCalculatorController {
     }
 
     @RequestMapping(value = "/api/updateUserProfile")
-    public void updateUserProfile(String email, String address) {
+    public void updateUserProfile(String email) {
         // Process profile update
         System.out.println("Profile updated for: " + email);
     }
